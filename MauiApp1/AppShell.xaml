@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp1"
+    xmlns:pages="clr-namespace:MauiApp1.Pages"
+    Shell.FlyoutBehavior="Flyout"
+    Title="MauiApp1">
+
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="100" BackgroundColor="#512BD4">
+            <Label Text="App Menu" 
+                   TextColor="White" 
+                   FontSize="Large" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Home">
+        <FlyoutItem.Icon>
+            <FontImageSource FontFamily="MaterialIcons" Glyph="&#xe88a;" Color="#512BD4" />
+        </FlyoutItem.Icon>
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Profile">
+        <FlyoutItem.Icon>
+            <FontImageSource FontFamily="MaterialIcons" Glyph="&#xe853;" Color="#512BD4" />
+        </FlyoutItem.Icon>
+        <ShellContent
+            Title="Profile"
+            ContentTemplate="{DataTemplate pages:ProfilePage}"
+            Route="ProfilePage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Settings">
+        <FlyoutItem.Icon>
+            <FontImageSource FontFamily="MaterialIcons" Glyph="&#xe8b8;" Color="#512BD4" />
+        </FlyoutItem.Icon>
+        <ShellContent
+            Title="Settings"
+            ContentTemplate="{DataTemplate pages:SettingsPage}"
+            Route="SettingsPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="About">
+        <FlyoutItem.Icon>
+            <FontImageSource FontFamily="MaterialIcons" Glyph="&#xe88e;" Color="#512BD4" />
+        </FlyoutItem.Icon>
+        <ShellContent
+            Title="About"
+            ContentTemplate="{DataTemplate pages:AboutPage}"
+            Route="AboutPage" />
+    </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <Grid Padding="20" BackgroundColor="{AppThemeBinding Light=#f0f0f0, Dark=#333333}">
+            <VerticalStackLayout Spacing="5">
+                <Label Text="MAUI Demo App" 
+                       TextColor="#512BD4" 
+                       FontAttributes="Bold"
+                       FontSize="14" 
+                       HorizontalOptions="Center"/>
+                
+                <Label Text="Version 1.0.0" 
+                       TextColor="{AppThemeBinding Light=#666666, Dark=#cccccc}" 
+                       FontSize="12" 
+                       HorizontalOptions="Center"/>
+                
+                <Label Text="© 2024 Your Company" 
+                       TextColor="{AppThemeBinding Light=#666666, Dark=#cccccc}" 
+                       FontSize="10" 
+                       HorizontalOptions="Center"
+                       Margin="0,10,0,0"/>
+                
+                <Button Text="Log Out"
+                        Margin="0,10,0,0"
+                        HeightRequest="36"
+                        BackgroundColor="#512BD4"
+                        TextColor="White"
+                        FontSize="12"
+                        CornerRadius="18"
+                        HorizontalOptions="Fill"
+                        Clicked="OnLogoutClicked"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Shell.FlyoutFooter>
+
+</Shell>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.ProfilePage"
+             Title="Profile">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,20"
+            Spacing="25">
+
+            <Frame
+                HeightRequest="120"
+                WidthRequest="120"
+                CornerRadius="60"
+                HorizontalOptions="Center"
+                Padding="0"
+                IsClippedToBounds="True">
+                <Image
+                    Source="dotnet_bot.png"
+                    Aspect="AspectFill"
+                    HeightRequest="120"
+                    WidthRequest="120" />
+            </Frame>
+
+            <Button
+                Text="Change Profile Picture"
+                HorizontalOptions="Center"
+                Clicked="OnChangeProfilePictureClicked" />
+
+            <Frame BorderColor="LightGray" Padding="15" Margin="0,10">
+                <VerticalStackLayout Spacing="20">
+                    <Label Text="Personal Information" FontAttributes="Bold" HorizontalOptions="Center" />
+                    
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="20">
+                        <Label Text="Name:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
+                        <Entry x:Name="NameEntry" Text="Sample User" Grid.Row="0" Grid.Column="1" />
+                        
+                        <Label Text="City:" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
+                        <Entry x:Name="CityEntry" Text="New York" Grid.Row="1" Grid.Column="1" />
+                        
+                        <Label Text="Phone:" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" />
+                        <Entry x:Name="PhoneEntry" Placeholder="Enter your phone number" Grid.Row="2" Grid.Column="1" />
+                        
+                        <Label Text="About Me:" Grid.Row="3" Grid.Column="0" VerticalOptions="Start" />
+                        <Editor x:Name="AboutMeEditor" HeightRequest="100" Grid.Row="3" Grid.Column="1" Placeholder="Write something about yourself" />
+                    </Grid>
+
+                    <Button
+                        Text="Save Changes"
+                        Clicked="OnSaveChangesClicked"
+                        HorizontalOptions="Center" 
+                        Margin="0,10,0,0" />
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage> 

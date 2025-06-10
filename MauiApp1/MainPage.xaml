@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description=".NET Bot in a hovercraft" />
+
+            <Label
+                Text="Welcome to MAUI App"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="This app demonstrates multi-page navigation with MAUI"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to .NET MAUI App" />
+
+            <Frame BackgroundColor="{AppThemeBinding Light=#f0f0f0, Dark=#333333}" Padding="20" Margin="0,10,0,20">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="App Features" FontAttributes="Bold" HorizontalOptions="Center" FontSize="18" />
+                    
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto" RowSpacing="15" ColumnSpacing="10">
+                        <Label Text="• Profile Management" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
+                        <Label Text="Edit your profile information" Grid.Row="0" Grid.Column="1" FontSize="14" TextColor="Gray" />
+                        
+                        <Label Text="• Theme Settings" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" />
+                        <Label Text="Toggle between light and dark mode" Grid.Row="1" Grid.Column="1" FontSize="14" TextColor="Gray" />
+                        
+                        <Label Text="• Navigation" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" />
+                        <Label Text="Explore different pages through the menu" Grid.Row="2" Grid.Column="1" FontSize="14" TextColor="Gray" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Tap me" 
+                SemanticProperties.Hint="Increments a counter each time you tap"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+                
+            <Label 
+                x:Name="CounterLabel"
+                Text="Current count: 0"
+                HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
